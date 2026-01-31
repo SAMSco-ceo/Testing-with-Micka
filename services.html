@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - EcoGlow Candles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4a3728;
+            --secondary-color: #7a5c3f;
+            --accent-color: #c9a961;
+            --dark-color: #1a1a1a;
+            --light-color: #f9f7f4;
+            --text-color: #3a3a3a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            letter-spacing: 0.3px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            z-index: 100;
+            border-bottom: 1px solid rgba(202, 169, 97, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.4s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #4a3728 0%, #7a5c3f 100%);
+            color: white;
+            padding: 5rem 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        section h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 0;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            border: none;
+            border-top: 1px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.8;
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.4s ease;
+            text-align: center;
+            align-self: flex-start;
+            border: 2px solid var(--primary-color);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .service-btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+            letter-spacing: 0.5px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🕯️ EcoGlow</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Services</h1>
+        <p>Discover What EcoGlow Offers</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Premium Candle Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Custom Candle Orders</h3>
+                    <p>Create a candle customized with your choice of scent, color, and size. Perfect for personal use, gifts, or special occasions. Our artisans will work with you to bring your vision to life.</p>
+                    <a href="contact.html" class="service-btn">Request Custom Order</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Candle Workshops</h3>
+                    <p>Learn how to make your own eco-friendly candles through our interactive workshops. Guided by experienced craftspeople, you'll discover the art and science of sustainable candle-making.</p>
+                    <a href="contact.html" class="service-btn">Book a Workshop</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎁</div>
+                    <h3>Gift Sets</h3>
+                    <p>Beautifully packaged sets perfect for any occasion. Choose from curated collections of our best-selling scents or customize your own gift set for that special someone.</p>
+                    <a href="contact.html" class="service-btn">Explore Gift Sets</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Subscription Service</h3>
+                    <p>Monthly delivery of our latest scents and exclusive collections. Subscribers enjoy special discounts, early access to new products, and personalized scent recommendations.</p>
+                    <a href="contact.html" class="service-btn">Join Subscription</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 4rem; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);">
+            <h2 style="text-align: left; margin-left: 0;">Why Our Services Stand Out</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🌱 Sustainable</h4>
+                    <p>All our candles are made from 100% natural soy wax with eco-friendly packaging.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎨 Customizable</h4>
+                    <p>From scents to colors and sizes, personalize your candles exactly as you want.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">⭐ High Quality</h4>
+                    <p>Hand-poured with premium ingredients for superior scent throw and burn time.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">💚 Community</h4>
+                    <p>Workshops and events that celebrate the candle-making craft and eco-conscious living.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EcoGlow Candles. Sustainable Luxury. Environmental Responsibility.</p>
+    </footer>
+</body>
+</html>

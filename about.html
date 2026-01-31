@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About EcoGlow Candles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4a3728;
+            --secondary-color: #7a5c3f;
+            --accent-color: #c9a961;
+            --dark-color: #1a1a1a;
+            --light-color: #f9f7f4;
+            --text-color: #3a3a3a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            letter-spacing: 0.3px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            z-index: 100;
+            border-bottom: 1px solid rgba(202, 169, 97, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.4s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #4a3728 0%, #7a5c3f 100%);
+            color: white;
+            padding: 5rem 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        section h2 {
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        section p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border-left: 1px solid var(--accent-color);
+            border-top: 1px solid var(--accent-color);
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .value-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+            letter-spacing: 0.5px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🕯️ EcoGlow</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>About EcoGlow Candles</h1>
+        <p>Our Story & Our Mission</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Who We Are</h2>
+            <p><strong>EcoGlow Candles</strong> is a sustainable candle company dedicated to creating eco-friendly, hand-poured candles made from 100% natural soy wax. We believe in providing customers with beautiful, high-quality candles while caring for the environment.</p>
+            <p>Founded on the principle that luxury doesn't have to come at the cost of our planet, EcoGlow combines traditional candle-making craftsmanship with modern sustainability practices.</p>
+        </section>
+
+        <section>
+            <h2>Our Mission</h2>
+            <p>EcoGlow Candles serve to provide ambiance and relaxation while promoting sustainability. They are perfect for environmentally-conscious consumers looking for high-quality, long-lasting candles that leave a minimal carbon footprint.</p>
+            <p>We're on a mission to prove that eco-friendly products don't require compromises on quality, elegance, or performance.</p>
+        </section>
+
+        <section>
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🌍 Sustainability</h3>
+                    <p>We use 100% natural soy wax and sustainable packaging materials to minimize our environmental impact.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🎨 Quality</h3>
+                    <p>Every candle is hand-poured with premium ingredients and carefully crafted to ensure superior performance.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💚 Responsibility</h3>
+                    <p>We're committed to ethical sourcing and fair practices throughout our supply chain.</p>
+                </div>
+                <div class="value-card">
+                    <h3>✨ Excellence</h3>
+                    <p>We continuously innovate to offer the best natural scents and designs in the market.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Why Natural Soy Wax?</h2>
+            <p>Soy wax is derived from soybean oil, a renewable resource that's biodegradable and completely natural. Unlike paraffin wax, soy wax:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li style="margin-bottom: 0.8rem;">Burns cleaner and longer</li>
+                <li style="margin-bottom: 0.8rem;">Produces less soot</li>
+                <li style="margin-bottom: 0.8rem;">Is fully renewable and biodegradable</li>
+                <li style="margin-bottom: 0.8rem;">Holds color and fragrance beautifully</li>
+                <li style="margin-bottom: 0.8rem;">Supports sustainable agriculture</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EcoGlow Candles. Sustainable Luxury. Environmental Responsibility.</p>
+    </footer>
+</body>
+</html>
